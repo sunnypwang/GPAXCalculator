@@ -3,27 +3,34 @@ function calculate() {
         .getElementById('courseTable')
         .getElementsByTagName('tbody')[0].rows.length
 
-    var gp = 0 //total grade point this sem
-    var cg = 0 //total credit this sem
-    for (var i = 0; i < totalCourse; i++) {
-        var credit = Number(document.getElementById('credit' + (i + 1)).value)
-        var grade = Number(document.getElementById('grade' + (i + 1)).value)
+	if (document.getElementById('cgx').value == '' || document.getElementById('gpx').value == '') {
+		alert("CGX or GPX cannot be blank")
+	} else {
+		var cgx = Number(document.getElementById('cgx').value)
+		var gpx = Number(document.getElementById('gpx').value)
+		
+		var gp = 0 //total grade point this sem
+		var cg = 0 //total credit this sem
+		for (var i = 0; i < totalCourse; i++) {
+			var credit = Number(document.getElementById('credit' + (i + 1)).value)
+			var grade = Number(document.getElementById('grade' + (i + 1)).value)
 
-        gp = gp + credit * grade
-        cg = cg + credit
-        console.log(credit, grade, cg, gp)
-    }
+			gp = gp + credit * grade
+			cg = cg + credit
+			console.log(credit, grade, cg, gp)
+		}
+		
+		var gpax = (gpx + gp) / (cgx + cg)
 
-    var cgx = Number(document.getElementById('cgx').value)
-    var gpx = Number(document.getElementById('gpx').value)
+		console.log(cg, cgx, gp, gpx, gpax)
 
-    var gpax = (gpx + gp) / (cgx + cg)
-
-    console.log(cg, cgx, gp, gpx, gpax)
-
-    document.getElementById('cg').innerHTML = cg
-    document.getElementById('gp').innerHTML = gp
-    document.getElementById('gpax').innerHTML = gpax
+		document.getElementById('result-div').classList.remove('hide')
+		
+		document.getElementById('cg').innerHTML = cg
+		// document.getElementById('gp').innerHTML = gp
+		document.getElementById('gpax').innerHTML = gpax.toFixed(3)
+	}
+    
 }
 
 function addRow() {
