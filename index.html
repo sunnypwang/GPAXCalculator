@@ -25,10 +25,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
 
-    <body class="grey darken-1">
+    <body class="grey darken-2">
         <nav class="blue lighten-1">
-            <div class="nav-wrapper center">
-                GPAX Calculator
+            <div class="nav-wrapper center light">
+                <strong style="font-size: 175%">GPAX Calculator</strong>
             </div>
         </nav>
         <div>
@@ -36,7 +36,7 @@
                 <table id="courseTable" class="grey lighten-1 striped centered">
                     <thead>
                         <tr>
-                            <th>Course</th>
+                            <th>Course Name (Optional)</th>
                             <th>Credits</th>
                             <th>Grade</th>
                         </tr>
@@ -86,16 +86,18 @@
                     <form class="col s12">
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="cgx" type="text" placeholder="CGX" />
-                                <label for="cgx" class="white-text"
-                                    >Cumulative Credit-Grade</label
+                                <input id="cgx" type="text" class="white-text" placeholder="CGX" required />
+                                <label for="cgx" class="white-text truncate"
+                                    >Cumulative Credit Granted</label
                                 >
+								<span class="helper-text grey-text text-lighten-1 left-align truncate">Cumulative Credit Granted of the last semester</span>
                             </div>
                             <div class="input-field col s6">
-                                <input id="gpx" type="text" placeholder="GPX" />
-                                <label for="gpx" class="white-text"
-                                    >Cumulative Grade Points</label
+                                <input id="gpx" type="text" class="white-text" placeholder="GPX" required />
+                                <label for="gpx" class="white-text truncate"
+                                    >Cumulative Grade Point</label
                                 >
+								<span class="helper-text grey-text text-lighten-1 left-align truncate">Cumulative Grade Point of the last semester</span>
                             </div>
                         </div>
                     </form>
@@ -107,29 +109,29 @@
                     Calculate
                 </button>
             </div>
-            <div class="container center">
+            <div id="result-div" class="container section center hide">
                 <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="col s4 card ">
+                    <form class="col s12 cards-container">
+                        
+                            <div class="col s6 card">
                                 <div class="card-content">
                                     <p class="card-title" id="cg">-</p>
                                     <span>Total credits</span>
                                 </div>
                             </div>
-                            <div class="col s4 card ">
+                            <!-- <div class="col s4 card">
                                 <div class="card-content">
                                     <p class="card-title" id="gp">-</p>
                                     <span>Total Grade Points</span>
                                 </div>
-                            </div>
-                            <div class="col s4 card ">
+                            </div> -->
+                            <div class="col s6 card">
                                 <div class="card-content">
-                                    <p class="card-title" id="gpax">-</p>
+                                    <p class="card-title" style="font-weight:bold" id="gpax">-</p>
                                     <span>GPAX</span>
                                 </div>
                             </div>
-                        </div>
+                        
                     </form>
                 </div>
             </div>
