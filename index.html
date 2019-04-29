@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>GPAX Calculator</title>
+
+        <!--Import Google Icon Font-->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <!--Import materialize.css-->
+        <link
+            type="text/css"
+            rel="stylesheet"
+            href="css/materialize.min.css"
+            media="screen,projection"
+        />
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body class="grey darken-1">
+        <nav class="blue lighten-1">
+            <div class="nav-wrapper center">
+                GPAX Calculator
+            </div>
+        </nav>
+        <div>
+            <div class="section container">
+                <table id="courseTable" class="grey lighten-1 striped centered">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Credits</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td width="50%">
+                                <div class="container">
+                                    <input class="center light" type="text" />
+                                </div>
+                            </td>
+                            <td width="25%">
+                                <div class="container">
+                                    <select
+                                        id="credit1"
+                                        class="browser-default center light"
+                                    >
+                                        <option value="3">3</option>
+                                        <option value="2">2</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <td width="25%">
+                                <div class="container">
+                                    <select
+                                        id="grade1"
+                                        class="browser-default center light"
+                                    >
+                                        <option value="4.0">A</option>
+                                        <option value="3.5">B+</option>
+                                        <option value="3.0">B</option>
+                                        <option value="2.5">C+</option>
+                                        <option value="2.0">C</option>
+                                        <option value="1.5">D+</option>
+                                        <option value="1.0">D</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container center">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="cgx" type="text" placeholder="CGX" />
+                                <label for="cgx" class="white-text"
+                                    >Cumulative Credit-Grade</label
+                                >
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="gpx" type="text" placeholder="GPX" />
+                                <label for="gpx" class="white-text"
+                                    >Cumulative Grade Points</label
+                                >
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container section center">
+                <button class="btn-large" onclick="addRow()">Add Course</button>
+                <button class="btn-large" onclick="calculate()">
+                    Calculate
+                </button>
+            </div>
+            <div class="container center">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="col s4 card ">
+                                <div class="card-content">
+                                    <p class="card-title" id="cg">-</p>
+                                    <span>Total credits</span>
+                                </div>
+                            </div>
+                            <div class="col s4 card ">
+                                <div class="card-content">
+                                    <p class="card-title" id="gp">-</p>
+                                    <span>Total Grade Points</span>
+                                </div>
+                            </div>
+                            <div class="col s4 card ">
+                                <div class="card-content">
+                                    <p class="card-title" id="gpax">-</p>
+                                    <span>GPAX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
