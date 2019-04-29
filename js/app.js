@@ -28,7 +28,7 @@ function calculate() {
 		
 		document.getElementById('cg').innerHTML = cg
 		// document.getElementById('gp').innerHTML = gp
-		document.getElementById('gpax').innerHTML = gpax.toFixed(3)
+		document.getElementById('gpax').innerHTML = gpax.toFixed(2)
 	}
     
 }
